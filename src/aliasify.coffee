@@ -1,5 +1,7 @@
 path = require 'path'
 transformTools = require 'browserify-transform-tools'
+chalk = require 'chalk'
+
 
 getReplacement = (file, aliases)->
     if aliases[file]
@@ -33,7 +35,8 @@ module.exports = transformTools.makeRequireTransform "aliasify", {jsFilesOnly: t
                 replacement = "./#{path.relative fileDir, replacement}"
 
             if verbose
-                console.error "aliasify -------------------------------------- #{opts.file}: replacing #{args[0]} with #{replacement}"
+                # console.error "aliasify -------------------------------------- #{opts.file}: replacing #{args[0]} with #{replacement}"
+                console.log chalk.black.bgRed.bold(args[0]), chalk.black.bgRed.bold(replacement);
 
             # If this is an absolute Windows path (e.g. 'C:\foo.js') then don't convert \s to /s.
             if /^[a-zA-Z]:\\/.test(replacement)
