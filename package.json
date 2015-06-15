@@ -1,5 +1,6 @@
 {
   "name": "aliasify",
+  "private": true,
   "version": "1.7.2",
   "description": "Rewrite require calls in browserify modules.",
   "main": "./lib/aliasify.js",
