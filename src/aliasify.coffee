@@ -33,7 +33,7 @@ module.exports = transformTools.makeRequireTransform "aliasify", {jsFilesOnly: t
                 replacement = "./#{path.relative fileDir, replacement}"
 
             if verbose
-                console.error "aliasify - #{opts.file}: replacing #{args[0]} with #{replacement}"
+                console.error "aliasify -------------------------------------- #{opts.file}: replacing #{args[0]} with #{replacement}"
 
             # If this is an absolute Windows path (e.g. 'C:\foo.js') then don't convert \s to /s.
             if /^[a-zA-Z]:\\/.test(replacement)
